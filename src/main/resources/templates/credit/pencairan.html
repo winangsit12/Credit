@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{layout :: head}"></head>
+<body>
+    <header th:replace="~{layout :: header}"></header>
+    <div class="container">
+        <aside class="sidebar" th:replace="~{layout :: nav}"></aside>
+        <main>
+            <div class="table-container">
+                <h3>
+                    <a href="../usermanagement/master-perusahaan.html"> Persetujuan Limit Pencairan </a>
+                </h3>
+                <form method="get" class="filter" th:action="@{/prospect}">
+                    <select name="noAplikasi" id="noAplikasi">
+                        <option value="#">Nomor Kontak</option>
+                        <option value="#">Nomor Aplikasi</option>
+                        <option value="#">Nama Debitur</option>
+                        <option value="#">Tanggal Cair</option>
+                        <option value="#">Nilai AP/ Pencairan</option>
+                        <option value="#">Periode Pembayaran</option>
+                        <option value="#">Surveyor</option>
+                        <option value="#">Produk</option>
+                        <option value="#">Status Aplikasi</option>
+                    </select>
+                    <input type="text" placeholder="&#xf002;  Nama Tabel">
+                    <button class="filter-button" type="submit">
+                        Search
+                    </button>
+                </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Nomor Kontak</th>
+                            <th>Nomor Aplikasi</th>
+                            <th>Nama Debitur</th>
+                            <th>Status Debitur</th>
+                            <th>Tanggal Cair</th>
+                            <th>Nilai AP/ Pencairan</th>
+                            <th>Periode Pembayaran</th>
+                            <th>Surveyor</th>
+                            <th>Produk</th>
+                            <th>Status Aplikasi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="action">
+                                <a href="pencairan-proses.html" class="action-button update-button">
+                                    <i class="fas fa-edit" aria-hidden="true"></i> Proses
+                                </a>
+                                <a class="action-button detail-button" href="pencairan-lihat.html">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i> Lihat
+                                </a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <div class="pagination" th:if="${numberOfPages} != 0">
+                                <div>
+                                    <button>&laquo;</button>
+                                    <button>&lt;</button>
+                                    <span>Page 1 of 30</span>
+                                    <button>&gt;</button>
+                                    <button>&raquo;</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+        </main>
+    </div>
+</body>
+</html>
