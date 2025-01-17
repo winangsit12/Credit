@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{layout :: head}"></head>
+<body>
+    <header th:replace="~{layout :: header}"></header>
+    <div class="container">
+        <aside class="sidebar" th:replace="~{layout :: nav}"></aside>
+        <main>
+            <div class="detail-container" th:object="${authorDetail}">
+                <h3>
+                    <a href=""> Pencairan </a> > <a href=""> Proses </a>
+                </h3>
+                <table class="detail-table">
+                    <tbody>
+                    <tr>
+                        <td><label>Nomor Kontrak</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nomor Aplikasi</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Kode Debitur</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Status Debitur</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nama Depan Debitur</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nama Tengah Debitur</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nama Akhir Debitur</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label >Tanggal Cair *</label></td>
+                        <td>
+                            <input  name="tanggal-bergabung" type="date" required placeholder="&#xf133;   1 Januari 2025">
+                            <div class="field-validation-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label >Tanggal Mulai Bayar Angsuran *</label></td>
+                        <td>
+                            <input  name="tanggal-bergabung" type="date" required placeholder="&#xf133;   1 Januari 2025">
+                            <div class="field-validation-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nilai Pencairan (d)</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nilai Bunga Berjalan (e)</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Biaya Kartu Berjalan (f)</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Biaya Kartu Berjalan (f)</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Biaya Kartu Berjalan (f)</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Biaya Kartu Berjalan (f)</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Biaya Kartu Berjalan (f)</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Biaya Kartu Berjalan (f)</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Biaya Kartu Berjalan (f)</label></td>
+                        <td>
+                            <span>...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nomor Telepon 1</label></td>
+                        <td>
+                            <span>021212121</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nomor Telepon 2</label></td>
+                        <td>
+                            <span>0817817817</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Nomor Fax</label></td>
+                        <td>
+                            <span>345678121</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Status</label></td>
+                        <td>
+                            <span>Aktif</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

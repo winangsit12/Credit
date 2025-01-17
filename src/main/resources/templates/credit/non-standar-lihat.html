@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<header th:replace="~{layout :: header}"></header>
+<div class="container">
+    <aside class="sidebar" th:replace="~{layout :: nav}"></aside>
+    <main>
+        <div class="detail-container" th:object="${authorDetail}">
+            <h3>
+                <a href="../usermanagement/master-perusahaan.html"> Persetujuan Limit Pencairan </a>
+                >
+                <a href="#"> Lihat </a>
+            </h3>
+            <table class="detail-table">
+                <tbody>
+                <tr>
+                    <td><label>Nomor Aplikasi</label></td>
+                    <td>
+                        <span>000002</span>
+                    </td>
+
+                    <td class="input-box">
+                        <div class="two-side">
+                            <input type="checkbox" id="naikBanding" name="naikBanding" disabled>
+                            <label for="naikBanding">Naik Banding</label>
+                            <input type="checkbox" id="RO" name="RO" disabled>
+                            <label for="RO">RO</label>
+                            <input type="checkbox" id="nonStandar" name="nonStandar" disabled>
+                            <label for="nonStandar">Non Standar</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Kode Debitur</label></td>
+                    <td>
+                        <span>C0003</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Nama Depan Debitur</label></td>
+                    <td>
+                        <span>Leonardo</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Nama Tengah Debitur</label></td>
+                    <td>
+                        <span>Davinci</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Nama Akhir Debitur</label></td>
+                    <td>
+                        <span>Code</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Surveyor</label></td>
+                    <td>
+                        <span>SY001 - Vincent Dinata</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Total Pencairan</label></td>
+                    <td>
+                        <span>3.200.000</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Scoring</label></td>
+                    <td>
+                        <span>3.2 - Di Rekomendasikan</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Ratio Kapasitas (%)</label></td>
+                    <td>
+                        <span>20.10</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Status Pefindo</label></td>
+                    <td>
+                        <span>Belum Di Cek</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="two-side">
+                <button class="detail-button" type="submit">Proses</button>
+                <button class="detail-button" type="submit">Detail Naik Banding</button>
+                <button class="detail-button" type="submit">Lihat Survey</button>
+                <button class="detail-button" type="submit">Lihat Non Standar</button>
+                <button class="detail-button" type="submit">Lihat Kontak RO</button>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

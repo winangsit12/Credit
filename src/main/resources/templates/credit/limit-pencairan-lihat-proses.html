@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<header th:replace="~{layout :: header}"></header>
+<div class="container">
+    <aside class="sidebar" th:replace="~{layout :: nav}"></aside>
+    <main>
+        <div class="form-container">
+            <h3>
+                <a href="#"> Persetujuan Limit Pencairan </a>
+                >
+                <a href="#"> Lihat </a>
+                >
+                <a href="#"> Proses </a>
+            </h3>
+
+            <form method="post" class="upsert-form" action="/book-library/insert-update(categoryName=${categoryName})">
+                <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label class="label-nama">Keputusan</label></td>
+                                <td>
+                                    <input type="text" placeholder="&#xf002;  Setuju">
+                                    <div class="field-validation-error"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="label-nama">Alasan*</label></td>
+                                <td>
+                                    <textarea id="alasan" name="alasan" required placeholder="Alasan..." rows="4" cols="50"></textarea>
+                                    <div class="field-validation-error"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="detail-button" type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>
