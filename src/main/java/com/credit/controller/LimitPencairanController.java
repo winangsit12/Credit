@@ -12,4 +12,24 @@ public class LimitPencairanController {
     public String index(Model model){
         return "credit/limit-pencairan";
     }
+
+    @GetMapping("lihat")
+    public String view(Model model){
+        return "credit/limit-pencairan-lihat";
+    }
+
+    @GetMapping("detail/banding")
+    public String banding(Model model){
+        return "credit/limit-pencairan-lihat-banding";
+    }
+
+    @GetMapping("lihat/nonstandar")
+    public String nonStandar(Model model){
+        return "credit/limit-pencairan-lihat-nonstandar";
+    }
+
+    @GetMapping("lihat/proses")
+    public String proses(Model model){
+        return "credit/limit-pencairan-lihat-proses";
+    }
 }

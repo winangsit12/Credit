@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<header th:replace="~{layout :: header}"></header>
+<div class="container">
+    <aside class="sidebar" th:replace="~{layout :: nav}"></aside>
+    <main>
+        <div class="table-container">
+            <h3>
+                <a href="../usermanagement/master-perusahaan.html"> Persetujuan Limit Pencairan </a>
+                >
+                <a href="#"> Lihat </a>
+                >
+                <a href="#"> Lihat Kondisi Non Standar </a>
+            </h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Deskripsi Non Standar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Status Rumah Pemohon Sewa/Kontrak</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <div class="pagination" th:if="${numberOfPages} != 0">
+                            <div>
+                                <button>&laquo;</button>
+                                <button>&lt;</button>
+                                <span>Page 1 of 30</span>
+                                <button>&gt;</button>
+                                <button>&raquo;</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </main>
+</div>
+</body>
+</html>

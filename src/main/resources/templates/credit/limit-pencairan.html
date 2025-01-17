@@ -12,7 +12,7 @@
                 </h3>
                 <form method="get" class="filter" th:action="@{/prospect}">
                     <select name="noAplikasi" id="noAplikasi">
-                        <option value="#">noAplikasi</option>
+                        <option value="#">No Aplikasi</option>
                         <option value="#">1</option>
                         <option value="#">2</option>
                         <option value="#">3</option>
@@ -25,6 +25,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>Cabang</th>
                             <th>Nomor Aplikasi</th>
                             <th>Dari</th>
@@ -36,14 +37,14 @@
                         <tr>
                             <td class="action">
                                 <a href="master-perusahaan-form.html" class="action-button update-button">
-                                    <i class="fas fa-edit" aria-hidden="true"></i> Ubah
+                                    <i class="fas fa-edit" aria-hidden="true"></i> Lihat
                                 </a>
                             </td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
-
+                            <td></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -62,6 +63,7 @@
                     </tr>
                     </tfoot>
                 </table>
+            </div>
         </main>
     </div>
 </body>

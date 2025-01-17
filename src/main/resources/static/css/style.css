@@ -28,22 +28,27 @@ header {
     left: 0;
     z-index: 1000;
 }
+.two-side{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 
+}
 /* Container for Sidebar and Main Content */
 .container {
     display: flex;
     position: relative;
-    margin-top: 60px; 
+    margin-top: 60px;
 }
 /* Sidebar Styling */
 /* Sidebar Styling */
 .sidebar {
     position: fixed;
-    top: 90px; 
+    top: 90px;
     left: 0;
     width: 200px;
     background-color: #f4f4f4;
-    height: calc(100vh - 60px); 
+    height: calc(100vh - 60px);
     padding-top: 15px;
     border-right: 1px solid #ddd;
     font-size: 15px;
@@ -164,7 +169,7 @@ header {
 /* Main Content Styling */
 main {
     margin-left: 220px;
-    margin-top: 40px; 
+    margin-top: 40px;
     padding: 20px;
     flex-grow: 1;
 }
@@ -448,7 +453,7 @@ h3 a:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border 0.3s ease;
-    font-family: 'Font Awesome 5 Free'; 
+    font-family: 'Font Awesome 5 Free';
     font-weight: 900;
 }
 
@@ -538,6 +543,28 @@ h3 a:hover {
 }
 
 .submit-button:hover {
+    background-color: #444; /* Darker black on hover */
+}
+
+.detail-button {
+    margin-top: 25px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    width: 170px;
+}
+
+.nandemonai-button{
+    display:flex;
+}
+
+.detail-button:hover {
     background-color: #444; /* Darker black on hover */
 }
 
