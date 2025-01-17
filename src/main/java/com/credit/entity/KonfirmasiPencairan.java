@@ -1,5 +1,7 @@
 package com.credit.entity;
 
+import com.credit.entity.Pencairan;
+import com.credit.entity.Persetujuan;
 import jakarta.persistence.*;
 import lombok.*;
 
