@@ -1,34 +1,32 @@
 package com.credit.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-
+@Data
 @Entity
 @Table(name = "Pencairan")
 public class Pencairan {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdPencairan")
-    private Integer idPencairan;
+    @Column(name = "NomorKontrak")
+    private String nomorKontrak;
 
-    @Column(name = "IdKonfirmasi")
-    private Integer idKonfirmasi;
+    @Column(name = "NomorAplikasi")
+    private String nomorAplikasi;
 
     @Column(name = "TanggalCair")
     private LocalDate tanggalCair;
 
-    @Column(name = "TanggalMulaiBayarAngsuran")
-    private LocalDate tanggalMulaiBayar;
+    @Column(name = "TanggalBayar")
+    private LocalDate tanggalBayar;
+
+    @Column(name = "KartuAnggota")
+    private String kartuAnggota;
+
+    @Column(name = "Komentar")
+    private String komentar;
 
     @Column(name = "Status")
     private String status;
@@ -36,10 +34,7 @@ public class Pencairan {
     @Column(name = "Alasan")
     private String alasan;
 
-    @Column(name = "Komentar")
-    private String komentar;
-
     @ManyToOne
-    @JoinColumn(name = "IdKonfirmasi", updatable = false, insertable = false)
-    private KonfirmasiPencairan konfirmasi;
+    @JoinColumn(name = "NomorAplikasi", insertable = false, updatable = false)
+    private Persetujuan persetujuan;
 }

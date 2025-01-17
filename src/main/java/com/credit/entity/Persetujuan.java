@@ -5,32 +5,24 @@ import lombok.*;
 
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-
+@Data
 @Entity
 @Table(name = "Persetujuan")
 public class Persetujuan {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdPersetujuan")
-    private Integer idPersetujuan;
-
-    @Column(name = "IdSurvei")
-    private Integer idSurvei;
+    @Column(name = "NomorAplikasi")
+    private String nomorAplikasi;
 
     @Column(name = "Keputusan")
-    private boolean keputusan;
+    private Boolean keputusan;
 
     @Column(name = "Alasan")
     private String alasan;
 
-    @ManyToOne
-    @JoinColumn(name = "IdSurvei", insertable = false, updatable = false)
-    private Survei survei;
+    @OneToOne
+    @JoinColumn(name = "PersetujuanPengajuan")
+    private Pengajuan pengajuan;
 
     @OneToMany(mappedBy = "persetujuan")
-    private List<KonfirmasiPencairan> listKonfirmasi;
+    private List<Pencairan> listPencairan;
 }

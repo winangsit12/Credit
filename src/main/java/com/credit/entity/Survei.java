@@ -6,36 +6,19 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-
+@Data
 @Entity
 @Table(name = "Survei")
 public class Survei {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdSurvei")
-    private Integer idSurvei;
+    @Column(name = "NomorAplikasi")
+    private String nomorAplikasi;
 
-    @Column(name = "NomorKontrak")
-    private String nomorKontrak;
+    @Column(name = "KodeDebitur")
+    private String kodeDebitur;
 
-    @Column(name = "NomorKontrakLama")
-    private String nomorKontrakLama;
-
-    @Column(name = "StatusDebitur")
-    private String statusDebitur;
-
-    @Column(name = "NamaDepanDebitur")
-    private String namaDepanDebitur;
-
-    @Column(name = "NamaTengahDebitur")
-    private String namaTengahDebitur;
-
-    @Column(name = "NamaAkhirDebitur")
-    private String namaAkhirDebitur;
+    @Column(name = "KodeSurveyor")
+    private String kodeSurveyor;
 
     @Column(name = "NilaiHargaPasar")
     private BigDecimal nilaiHargaPasar;
@@ -50,7 +33,7 @@ public class Survei {
     private BigDecimal nilaiTaksasi;
 
     @Column(name = "PeringkatDebitur")
-    private String peringkatDebitur;
+    private Boolean peringkatDebitur;
 
     @Column(name = "LTVMaksimalPencairan")
     private Double lTVMaksimal;
@@ -71,7 +54,7 @@ public class Survei {
     private BigDecimal sisaNilaiPencairan;
 
     @Column(name = "PeriodePembayaran")
-    private String periodePembayaran;
+    private Boolean periodePembayaran;
 
     @Column(name = "Tenor")
     private Integer tenor;
@@ -79,8 +62,8 @@ public class Survei {
     @Column(name = "NilaiAngsuran")
     private BigDecimal nilaiAngsuran;
 
-    @Column(name = "JenisAngsuran")
-    private String jenisAngsuran;
+    @Column(name = "AdvanceArrear")
+    private Boolean jenisAngsuran;
 
     @Column(name = "CaraPencairan")
     private String caraPencairan;
@@ -88,15 +71,23 @@ public class Survei {
     @Column(name = "NomorRekening")
     private String nomorRekening;
 
+    @Column(name = "NamaRekening")
+    private String namaRekening;
+
     @Column(name = "Bank")
     private String namaBank;
 
-    @Column(name = "Banding")
-    private Boolean banding;
+    @Column(name = "Produk")
+    private String produk;
 
-    @Column(name = "Standar")
-    private Boolean standar;
+    @ManyToOne
+    @JoinColumn(name = "KodeDebitur", insertable = false, updatable = false)
+    private Debitur debitur;
 
-    @OneToMany(mappedBy = "survei")
-    private List<Persetujuan> listPersetujuan;
+    @ManyToOne
+    @JoinColumn(name = "KodeSurveyor", insertable = false, updatable = false)
+    private Surveyor surveyor;
+
+    @OneToOne(mappedBy = "survei")
+    private Pengajuan pengajuan;
 }
