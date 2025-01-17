@@ -1,4 +1,4 @@
-package com.credit.Entity;
+package com.credit.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,10 +1,12 @@
-package com.credit.Entity;
+package com.credit.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -12,15 +14,15 @@ import java.util.List;
 @Setter
 
 @Entity
-@Table(name = "KofirmasiPencairan")
-public class KonfirmasiPencairan {
+@Table(name = "Pencairan")
+public class Pencairan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "IdPencairan")
+    private Integer idPencairan;
+
     @Column(name = "IdKonfirmasi")
     private Integer idKonfirmasi;
-
-    @Column(name = "IdPersetujuan")
-    private Integer idPersetujuan;
 
     @Column(name = "TanggalCair")
     private LocalDate tanggalCair;
@@ -28,16 +30,16 @@ public class KonfirmasiPencairan {
     @Column(name = "TanggalMulaiBayarAngsuran")
     private LocalDate tanggalMulaiBayar;
 
-    @Column(name = "NomorKartuAnggota")
-    private String nomorKartuAnggota;
+    @Column(name = "Status")
+    private String status;
+
+    @Column(name = "Alasan")
+    private String alasan;
 
     @Column(name = "Komentar")
     private String komentar;
 
     @ManyToOne
-    @JoinColumn(name = "IdPersetujuan", updatable = false, insertable = false)
-    private Persetujuan persetujuan;
-
-    @OneToMany(mappedBy = "konfirmasi")
-    private List<Pencairan> listPencairan;
+    @JoinColumn(name = "IdKonfirmasi", updatable = false, insertable = false)
+    private KonfirmasiPencairan konfirmasi;
 }
